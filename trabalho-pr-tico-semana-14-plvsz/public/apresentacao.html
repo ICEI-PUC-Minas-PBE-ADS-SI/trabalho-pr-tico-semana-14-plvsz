@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Apresentação - Mapbox</title>
+    <!-- Referência à biblioteca Mapbox GL JS -->
+    <link href="https://api.mapbox.com/mapbox-gl-js/v2.16.1/mapbox-gl.css" rel="stylesheet">
+    <style>
+        body { font-family: Arial, sans-serif; margin: 0; padding: 0; }
+        header { background: #222; color: #fff; padding: 1rem; text-align: center; position: relative; }
+        #map { width: 100%; height: 500px; margin: 2rem auto; border-radius: 8px; }
+        .content { max-width: 800px; margin: 2rem auto; padding: 1rem; }
+        .btn { display: inline-block; padding: 0.5rem 1rem; margin-top: 1rem; background: #007bff; color: #fff; text-align: center; border-radius: 4px; text-decoration: none; }
+        .btn:hover { background: #0056b3; }
+        .btn-primary { position: absolute; top: 1rem; right: 2rem; }
+        table { width: 100%; border-collapse: collapse; margin-bottom: 2rem; }
+        th, td { padding: 8px; border: 1px solid #ddd; text-align: left; }
+        th { background: #f5f5f5; }
+        tr:hover { background: #f1f1f1; }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Apresentação Dinâmica com Mapbox</h1>
+        <a href="index.html" class="btn btn-primary mt-0">Voltar para a Página Inicial</a>
+    </header>
+    <div class="content">
+        <p>Esta página demonstra a integração dinâmica com a biblioteca <strong>Mapbox</strong> para visualização de mapas interativos.</p>
+        <h2>Receitas</h2>
+        <div style="overflow-x:auto;">
+        <table id="tabela-receitas" style="width:100%; border-collapse:collapse; margin-bottom:2rem;">
+            <thead>
+                <tr style="background:#f5f5f5;">
+                    <th style="padding:8px; border:1px solid #ddd;">Receita</th>
+                    <th style="padding:8px; border:1px solid #ddd;">Tipo</th>
+                    <th style="padding:8px; border:1px solid #ddd;">Tempo de Preparo</th>
+                    <th style="padding:8px; border:1px solid #ddd;">Origem Típica</th>
+                    <th style="padding:8px; border:1px solid #ddd;">Ações</th>
+                </tr>
+            </thead>
+            <tbody id="corpo-tabela-receitas">
+                <!-- Receitas dinâmicas -->
+            </tbody>
+        </table>
+        </div>
+        <div style="display: flex; flex-wrap: wrap; gap: 2rem; justify-content: center;">
+            <div style="flex: 1 1 300px; min-width: 300px;">
+                <canvas id="pieChart"></canvas>
+            </div>
+            <div style="flex: 1 1 300px; min-width: 300px;">
+                <canvas id="barChart"></canvas>
+            </div>
+        </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script>
+    async function carregarReceitas() {
+        const response = await fetch('http://localhost:3000/receitas');
+        const receitas = await response.json();
+        // Monta tabela
+        const corpoTabela = document.getElementById('corpo-tabela-receitas');
+        corpoTabela.innerHTML = '';
+        receitas.forEach(r => {
+            corpoTabela.innerHTML += `<tr>
+                <td style='padding:8px; border:1px solid #ddd;'>${r.titulo || '-'}</td>
+                <td style='padding:8px; border:1px solid #ddd;'>${r.categoria || '-'}</td>
+                <td style='padding:8px; border:1px solid #ddd;'>${r.tempoPreparo || '-'}</td>
+                <td style='padding:8px; border:1px solid #ddd;'>${r.origem || '-'}</td>
+                <td style='padding:8px; border:1px solid #ddd;'><button onclick="excluirReceita('${r.id}')" class='btn btn-danger btn-sm'>Excluir</button></td>
+            </tr>`;
+        });
+        // Gráfico de pizza por categoria
+        const categorias = ['Doce', 'Salgado', 'Bebida', 'Massa', 'Lanches', 'Pão', 'Pães', 'Carnes', 'Bolos'];
+        const categoriaCount = categorias.map(cat => receitas.filter(r => (r.categoria||'').toLowerCase().includes(cat.toLowerCase())).length);
+        if(window.pieChartObj) window.pieChartObj.destroy();
+        window.pieChartObj = new Chart(document.getElementById('pieChart'), {
+            type: 'pie',
+            data: {
+                labels: categorias,
+                datasets: [{
+                    data: categoriaCount,
+                    backgroundColor: ['#ff6384', '#36a2eb', '#ffce56', '#8bc34a', '#f39c12', '#8e44ad', '#e67e22', '#2ecc71', '#e74c3c']
+                }]
+            },
+            options: {
+                plugins: { legend: { position: 'bottom' } },
+                responsive: true
+            }
+        });
+        // Gráfico de barras por tempo de preparo
+        const faixas = ['Até 15min', '16-30min', '31-60min', 'Acima de 1h'];
+        const faixaCount = [
+            receitas.filter(r => tempoEmMin(r.tempoPreparo) <= 15).length,
+            receitas.filter(r => tempoEmMin(r.tempoPreparo) > 15 && tempoEmMin(r.tempoPreparo) <= 30).length,
+            receitas.filter(r => tempoEmMin(r.tempoPreparo) > 30 && tempoEmMin(r.tempoPreparo) <= 60).length,
+            receitas.filter(r => tempoEmMin(r.tempoPreparo) > 60).length
+        ];
+        if(window.barChartObj) window.barChartObj.destroy();
+        window.barChartObj = new Chart(document.getElementById('barChart'), {
+            type: 'bar',
+            data: {
+                labels: faixas,
+                datasets: [{
+                    label: 'Quantidade de Receitas',
+                    data: faixaCount,
+                    backgroundColor: '#36a2eb'
+                }]
+            },
+            options: {
+                plugins: { legend: { display: false } },
+                responsive: true,
+                scales: { y: { beginAtZero: true, precision: 0 } }
+            }
+        });
+    }
+    function tempoEmMin(tempo) {
+        if (!tempo) return 0;
+        if (typeof tempo === 'number') return tempo;
+        tempo = tempo.toLowerCase();
+        if (tempo.includes('hora')) {
+            const h = parseInt(tempo);
+            const m = tempo.includes('min') ? parseInt(tempo.split('hora')[1]) : 0;
+            return h * 60 + (isNaN(m) ? 0 : m);
+        }
+        if (tempo.includes('min')) return parseInt(tempo);
+        return 0;
+    }
+    function excluirReceita(id) {
+        if(confirm('Tem certeza que deseja excluir esta receita?')) {
+            fetch('http://localhost:3000/receitas/' + id, { method: 'DELETE' })
+                .then(() => carregarReceitas());
+        }
+    }
+    carregarReceitas();
+    </script>
+</body>
+</html>

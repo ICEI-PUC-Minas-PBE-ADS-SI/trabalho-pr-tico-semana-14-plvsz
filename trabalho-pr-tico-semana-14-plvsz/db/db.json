@@ -1,0 +1,271 @@
+{
+  "receitas": [
+    {
+      "categoria": "Doce",
+      "titulo": "Bolo com cacau em pó",
+      "imagem": "img/bolo-top.jpg",
+      "tempoPreparo": "45 min",
+      "porcoes": "8 pessoas",
+      "dificuldade": "baixa",
+      "ingredientes": [
+        "500g de farinha de trigo",
+        "2 xícaras de açúcar",
+        "1 xícara de cacau em pó",
+        "4 ovos",
+        "1 xícara de leite",
+        "1 colher de sopa de fermento em pó"
+      ],
+      "modoPreparo": [
+        "Misture os ingredientes secos.",
+        "Adicione os ovos e o leite.",
+        "Misture bem e leve ao forno pré-aquecido a 180°C por 45 minutos."
+      ],
+      "origem": "Belo Horizonte, Brasil",
+      "id": "1"
+    },
+    {
+      "id": "2",
+      "categoria": "Salgado",
+      "titulo": "Carne Assada",
+      "imagem": "img/carne-top_1.jpg",
+      "tempoPreparo": "1 hora",
+      "porcoes": "6 pessoas",
+      "dificuldade": "média",
+      "ingredientes": [
+        "1 kg de carne bovina (patinho ou coxão mole)",
+        "4 dentes de alho",
+        "Sal e pimenta a gosto",
+        "2 colheres de sopa de azeite",
+        "2 cebolas médias",
+        "2 tomates",
+        "1 xícara de água"
+      ],
+      "modoPreparo": [
+        "Tempere a carne com alho, sal e pimenta",
+        "Aqueça o azeite e sele a carne de todos os lados",
+        "Adicione as cebolas e os tomates cortados",
+        "Acrescente a água e cozinhe em fogo baixo por 45 minutos",
+        "Deixe descansar por 10 minutos antes de fatiar"
+      ],
+      "origem": "Minas Gerais, Brasil"
+    },
+    {
+      "id": "3",
+      "categoria": "Bebida",
+      "titulo": "Caipirinha",
+      "imagem": "img/caipirinha-top.jpg",
+      "tempoPreparo": "15 min",
+      "porcoes": "2 pessoas",
+      "dificuldade": "baixa",
+      "ingredientes": [
+        "1 limão",
+        "2 colheres de sopa de açúcar",
+        "50ml de cachaça",
+        "Gelo a gosto"
+      ],
+      "modoPreparo": [
+        "Corte o limão em pedaços e coloque em um copo.",
+        "Adicione o açúcar e amasse bem.",
+        "Coloque a cachaça e o gelo, misture e sirva."
+      ],
+      "origem": "São Paulo, Brasil"
+    },
+    {
+      "id": "4",
+      "categoria": "Massa",
+      "titulo": "Espaguete à Carbonara",
+      "imagem": "img/macarrao-top.jpg",
+      "tempoPreparo": "20 min",
+      "porcoes": "4 pessoas",
+      "dificuldade": "média",
+      "ingredientes": [
+        "400g de espaguete",
+        "100g de bacon",
+        "2 ovos",
+        "50g de queijo parmesão",
+        "Sal e pimenta a gosto"
+      ],
+      "modoPreparo": [
+        "Cozinhe o espaguete.",
+        "Frite o bacon.",
+        "Misture os ovos e o queijo.",
+        "Junte tudo e tempere."
+      ],
+      "origem": "Itália"
+    },
+    {
+      "id": "5",
+      "categoria": "Salgado",
+      "titulo": "Pão Francês",
+      "imagem": "img/pao-top.jpg",
+      "tempoPreparo": "3 horas",
+      "porcoes": "4 pessoas",
+      "dificuldade": "média",
+      "ingredientes": [
+        "500g de farinha de trigo",
+        "10g de fermento biológico seco",
+        "10g de sal",
+        "300ml de água"
+      ],
+      "modoPreparo": [
+        "Misture os ingredientes.",
+        "Sove a massa.",
+        "Deixe crescer por 2 horas.",
+        "Modele os pães e asse por 40 minutos."
+      ],
+      "origem": "França"
+    },
+    {
+      "id": "6",
+      "categoria": "Salgado",
+      "titulo": "Filé de Frango Cajun",
+      "imagem": "img/frango-top.jpg",
+      "tempoPreparo": "30 min",
+      "porcoes": "2 pessoas",
+      "dificuldade": "baixa",
+      "ingredientes": [
+        "2 filés de frango",
+        "1 colher de sopa de tempero cajun",
+        "Sal a gosto",
+        "Azeite para grelhar"
+      ],
+      "modoPreparo": [
+        "Tempere o frango com o cajun e o sal.",
+        "Grelhe até dourar dos dois lados."
+      ],
+      "origem": "Louisiana, EUA"
+    },
+    {
+      "id": "7",
+      "categoria": "Doce",
+      "titulo": "Pudim de Caneca",
+      "imagem": "img/pudim-top.jpg",
+      "tempoPreparo": "10 min",
+      "porcoes": "1 pessoa",
+      "dificuldade": "baixa",
+      "ingredientes": [
+        "1 ovo",
+        "4 colheres de sopa de leite condensado",
+        "4 colheres de sopa de leite",
+        "1 colher de chá de essência de baunilha"
+      ],
+      "modoPreparo": [
+        "Misture todos os ingredientes em uma caneca.",
+        "Leve ao micro-ondas por 2 minutos."
+      ],
+      "origem": "Brasil"
+    },
+    {
+      "id": "bc58",
+      "titulo": "Cachorro quente",
+      "categoria": "Pães",
+      "imagem": "",
+      "tempoPreparo": "10 min",
+      "porcoes": "Serve 5 pessoas",
+      "dificuldade": "Media",
+      "ingredientes": [
+        "ss"
+      ],
+      "modoPreparo": [
+        "ss"
+      ],
+      "origem": "São Paulo, Brasil"
+    },
+    {
+      "id": "5530",
+      "titulo": "Cachorro quente",
+      "categoria": "Lanches",
+      "imagem": "ergfeweerfgre.jpg",
+      "tempoPreparo": "10 min",
+      "porcoes": "Serve 5 pessoas",
+      "dificuldade": "Media",
+      "ingredientes": [
+        "ss"
+      ],
+      "modoPreparo": [
+        "ss"
+      ],
+      "origem": "São Paulo, Brasil"
+    },
+    {
+      "id": "4b65",
+      "titulo": "Cachorro quente",
+      "categoria": "Lanches",
+      "imagem": "ergfeweerfgre.jpg",
+      "tempoPreparo": "10 min",
+      "porcoes": "Serve 5 pessoas",
+      "dificuldade": "Media",
+      "ingredientes": [
+        "ss"
+      ],
+      "modoPreparo": [
+        "ss"
+      ],
+      "origem": "São Paulo, Brasil"
+    },
+    {
+      "id": "29ea",
+      "titulo": "Cachorro quente",
+      "categoria": "Lanches",
+      "imagem": "ergfeweerfgre.jpg",
+      "tempoPreparo": "10 min",
+      "porcoes": "Serve 5 pessoas",
+      "dificuldade": "Media",
+      "ingredientes": [
+        "dd"
+      ],
+      "modoPreparo": [
+        "dd"
+      ],
+      "origem": "São Paulo, Brasil"
+    },
+    {
+      "id": "bc52",
+      "titulo": "Cachorro quente",
+      "categoria": "Lanches",
+      "imagem": "ergfeweerfgre.jpg",
+      "tempoPreparo": "10 min",
+      "porcoes": "Serve 5 pessoas",
+      "dificuldade": "Media",
+      "ingredientes": [
+        "ss"
+      ],
+      "modoPreparo": [
+        "ss"
+      ],
+      "origem": "São Paulo, Brasil"
+    },
+    {
+      "id": "4a75",
+      "titulo": "Cachorro quente",
+      "categoria": "Lanches",
+      "imagem": "ergfeweerfgre.jpg",
+      "tempoPreparo": "10 min",
+      "porcoes": "Serve 5 pessoas",
+      "dificuldade": "Media",
+      "ingredientes": [
+        "ss"
+      ],
+      "modoPreparo": [
+        "ss"
+      ],
+      "origem": "São Paulo, Brasil"
+    }
+  ],
+  "usuarios": [
+    {
+      "id": "187cb7e5-e097-4224-8bc7-b610c855e2b1",
+      "login": "admin",
+      "senha": "123",
+      "nome": "Administrador do Sistema",
+      "email": "admin@abc.com"
+    },
+    {
+      "id": "ec37c83d-4b7f-458d-9e10-3fda7d37cd3e",
+      "login": "user",
+      "senha": "123",
+      "nome": "Usuario Comum",
+      "email": "user@abc.com"
+    }
+  ]
+}
