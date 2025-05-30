@@ -9,15 +9,17 @@ Sugerimos o uso das seguintes ferramentas acessíveis: [FullCalendar](https://fu
 
 ## Informações do trabalho
 
-- Nome:
-- Matricula:
-- Proposta de projeto escolhida:
-- Breve descrição sobre seu projeto:
+- Nome: Pedro Henriqeu Alves Emerick
+- Matricula:881117
+- Proposta de projeto escolhida:Diretório de Receitas
+- Breve descrição sobre seu projeto:Desenvolvi um site de receitas com diversas opções fáceis, deliciosas, organizadas por categoria, facilitando a busca e navegação.
 
 **Print da tela com a implementação**
 
 << Coloque aqui uma breve explicação da implementação feita nessa etapa>>
 
-<<  COLOQUE A IMAGEM TELA 1 AQUI >>
+![Tela 1](Teste1.png)
 
-<<  COLOQUE A IMAGEM TELA 2 AQUI >>
+
+
+![Tela 2](Teste2.png)
