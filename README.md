@@ -18,6 +18,6 @@ Sugerimos o uso das seguintes ferramentas acessíveis: [FullCalendar](https://fu
 
 << Coloque aqui uma breve explicação da implementação feita nessa etapa>>
 
-![Tela 1](trabalho-pr-tico-semana-14-plvsz\Teste1.png)
+![Tela 1](Teste1.png)
 
-![Tela 2](trabalho-pr-tico-semana-14-plvsz\Teste2.png)
+![Tela 2](Teste2.png)
