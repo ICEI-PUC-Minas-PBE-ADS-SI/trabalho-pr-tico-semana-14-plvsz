@@ -16,7 +16,9 @@ Sugerimos o uso das seguintes ferramentas acessíveis: [FullCalendar](https://fu
 
 **Print da tela com a implementação**
 
-<< Coloque aqui uma breve explicação da implementação feita nessa etapa>>
+Gráfico de pizza mostrando o percentual de receitas por categoria culinária: Ex: doces, salgados, bebidas, massas.  [Chart,js].
+Gráfico de barras por tempo de preparo: Agrupar receitas por tempo (ex: até 30min, 1h…).  [Chart,js].
+Mapa  das receitas: Informação da localização típica ou origem da receita. [Mapbox].
 
 ![Tela 1](Teste1.png)
 
